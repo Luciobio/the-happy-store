@@ -14,16 +14,54 @@
 }
 
 .linksCont {
-    width: 30vw;
+    width: 40vw;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+}
+
+.cartCont {
+    display: flex;
+    justify-content: space-around;
 }
 
 .navItem {
     margin-bottom: 2vh;
 }
 
+a {
+    text-decoration: none;
+    color: #04A118;
+}
+
+a:hover {
+    color:#02600f;
+}
+
 .cartIcon {
     fill: #04A118;
+}
+
+/* 4 Tablet */
+@media (max-width: 767px) {
+    .NavBar {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 50vw;
+    }
+
+    .linksCont {
+        width: 100vw;
+    }
+
+}
+
+/* tablet */
+@media (min-width: 425px) {
+
 }
