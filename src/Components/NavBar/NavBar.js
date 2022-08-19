@@ -1,7 +1,6 @@
 import './NavBar.css';
+import CartWidget from '../CartWidget/CartWidget'
 import Logo from '../../Imgs/THS_logo.png'
-import {ReactComponent as CartIcon} from '../../Imgs/Icons/cart_icon.svg'
-import Container from 'react-bootstrap/Container';
 
 const NavBar = () => {
     return(
@@ -12,8 +11,8 @@ const NavBar = () => {
                 <a className='navItem' href='/'>PRODUCTS</a>
                 <a className='navItem' href='/'>CONTACT</a>
                 <div className='cartCont'>
-                    <div><CartIcon className='cartIcon navItem'/></div>
                     <a className='navItem' href='/'>CART</a>
+                    <CartWidget />
                 </div>                
             </div>
         </div>

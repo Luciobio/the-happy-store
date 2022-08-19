@@ -14,13 +14,14 @@
 }
 
 .linksCont {
-    width: 40vw;
+    width: 45vw;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
 }
 
 .cartCont {
+    width: 18%;
     display: flex;
     justify-content: space-around;
 }
@@ -36,10 +37,6 @@ a {
 
 a:hover {
     color:#02600f;
-}
-
-.cartIcon {
-    fill: #04A118;
 }
 
 /* 4 Tablet */
@@ -61,7 +58,7 @@ a:hover {
 
 }
 
-/* tablet */
+/* 4 Mobile */
 @media (min-width: 425px) {
 
 }
