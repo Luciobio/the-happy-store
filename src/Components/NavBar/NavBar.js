@@ -2,7 +2,7 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget'
 import Logo from '../../Imgs/THS_logo.png'
 
-const NavBar = () => {
+const NavBar = ({cartCount}) => {
     return(
         <div className= 'NavBar'>
             <img className= 'logo' src={Logo} alt='/'/>
@@ -12,7 +12,7 @@ const NavBar = () => {
                 <a className='navItem' href='/'>CONTACT</a>
                 <div className='cartCont'>
                     <a className='navItem' href='/'>CART</a>
-                    <CartWidget />
+                    <CartWidget cartCount={cartCount}/>
                 </div>                
             </div>
         </div>

@@ -1,9 +1,11 @@
 import './ItemListContainer.css';
+import ItemCount from '../ItemCount/ItemCount'
 
-const ItemListContainer = (greeting) => {
+const ItemListContainer = ({countProps, greeting}) => {
     return (
         <div className='ItemListContainer'>
-            <h1>{greeting.greeting}</h1>
+            <h1>{greeting.message}</h1>
+            <ItemCount stock={countProps.stock} initial={countProps.initial} onAdd={countProps.onAdd}/>
         </div>
     );
 };
