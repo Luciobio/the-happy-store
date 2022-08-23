@@ -1,0 +1,58 @@
+.ItemCount {
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ItemCount:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ItemCount img{
+    width: 220px;
+    height: 220px;
+    margin: 10px
+}
+
+.ItemCount h4{
+    font-weight: 600;
+    font-size: 28px;
+    margin: 15px
+}
+
+.ItemCount button{
+    color: white;
+    background-color: #04A118;
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+
+.count {
+    font-size: 24px;
+}
+
+.bttnCont{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.addBtn {
+    width: 100%;
+}
+
+

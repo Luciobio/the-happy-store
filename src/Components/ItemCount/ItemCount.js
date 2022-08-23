@@ -1,4 +1,6 @@
+import './ItemCount.css';
 import {useState} from 'react';
+import CardImg from '../../Imgs/card_img.jpg';
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial);
@@ -20,10 +22,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
         <div className= 'ItemCount'>
-            <div className= 'count'>{count}</div>
-            <button onClick={()=> increment(itemStock)}> + </button>
-            <button onClick={decrement}> - </button>
-            <button onClick={handeAdd}> Add to Cart </button>
+            <img className='cardImg' src= {CardImg} alt=''/>
+            <h4>Producto</h4>
+            <div className='bttnCont'>
+                <button onClick={decrement}> - </button>
+                <div className= 'count'>{count}</div>
+                <button onClick={()=> increment(itemStock)}> + </button>
+            </div>
+            <button className = 'addBttn' onClick={handeAdd}> Add to Cart </button>
         </div>
     );
 };
