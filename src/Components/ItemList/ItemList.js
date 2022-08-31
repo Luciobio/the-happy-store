@@ -19,10 +19,14 @@ useEffect(()=>{
 
 const showItems = items.map(prod => <Item countProps={countProps} prod = {prod}/>)
 
-return (
+const isLoading = loading? <h2>Loading...</h2> : (
     <div className="ItemList">
         {showItems}
     </div>
+);
+
+return (
+    isLoading
 )
 }
 

@@ -7,7 +7,6 @@ const ItemListContainer = ({countProps, greeting}) => {
         <div className='ItemListContainer'>
             <h1>{greeting.message}</h1>
             <ItemList countProps={countProps}/>
-            {/* <ItemCount stock={countProps.stock} initial={countProps.initial} onAdd={countProps.onAdd}/> */}
         </div>
     );
 };

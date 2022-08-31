@@ -1,7 +1,7 @@
 const products = [
     {
         id:'1',
-        name:'Cogonauts Flidas - Picador Coleccionable', 
+        name:'Cogonauts Flidas - Grindr', 
         price:'3500', 
         description:'', 
         category:'Accesories', 
@@ -11,7 +11,7 @@ const products = [
     },
     {
         id:'2',
-        name:'Sustrato Eden liviano premium cultivo 25 litros', 
+        name:'Substrate Eden - 25L', 
         price:'1075', 
         description:'• EDEN - Queens paradise es un sustrato de uso profesional, que ofrece óptimas condiciones de siembra y/o trasplante, por su excelente aireación, retención de agua, reacción (pH) y Ce.', 
         category:'Growing Media', 
@@ -21,7 +21,7 @@ const products = [
     },
     {
         id:'3',
-        name:'Sodium Lamp 400w', 
+        name:'Sodium Lamp - 400w', 
         price:'3755', 
         description:'Lámpara de alta presión 400w Sodio, tubular transparente con rosca E40. Ideal para cultivo indoor, y floración en general.', 
         category:'Lighting', 
