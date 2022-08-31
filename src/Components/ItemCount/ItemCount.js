@@ -19,18 +19,16 @@ const ItemCount = ({stock, initial, onAdd}) => {
         setItemStock(current => current - count);
         setCount(0);
     }
-
+    
     return (
-        <div className= 'ItemCount'>
-            <img className='cardImg' src= {CardImg} alt=''/>
-            <h4>Producto</h4>
-            <div className='bttnCont'>
+        <>
+            <div className= 'bttnCont'>
                 <button onClick={decrement}> - </button>
                 <div className= 'count'>{count}</div>
                 <button onClick={()=> increment(itemStock)}> + </button>
             </div>
             <button className = 'addBttn' onClick={handeAdd}> Add to Cart </button>
-        </div>
+        </>
     );
 };
 

@@ -18,13 +18,13 @@
 }
 
 .ItemCount img{
-    width: 220px;
+    width: 180px;
     height: 220px;
     margin: 10px
 }
 
 .ItemCount h4{
-    font-weight: 600;
+    font-weight: 300;
     font-size: 28px;
     margin: 15px
 }

@@ -1,25 +1,27 @@
-import { useEffect, useEstate } from "react";
+import { useEffect, useState } from "react";
+import {getProducts} from "../../asyncMock";
 import Item from '../Item/Item'
+import './ItemList.css'
 
-const ItemList = () => {
-const [items, setItems] = useEstate([]);
+const ItemList = ({countProps}) => {
+const [items, setItems] = useState([]);
+const [loading, setLoading] = useState(true);
 
-useEffect((res)=>{
-    fetch(setItems(res));
-    
+
+useEffect(()=>{
+    getProducts()
+    .then((res) => {
+        console.log(res);
+        setItems(res);
+    })
+    .finally(() => setLoading(false)); 
 },[]);
 
-const showItem = (items) => { 
-    items.map((prod)=> {
-        retun (
-        <Item noun={prod.name} price={prod.price} stock={prod.stock}/>
-        )
-    })
-}
+const showItems = items.map(prod => <Item countProps={countProps} prod = {prod}/>)
 
 return (
-    <div>
-        {showItems(items)};
+    <div className="ItemList">
+        {showItems}
     </div>
 )
 }

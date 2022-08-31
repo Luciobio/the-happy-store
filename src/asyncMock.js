@@ -7,7 +7,7 @@ const products = [
         category:'Accesories', 
         stock:'5', 
         initial:1,
-        img:'../public/assests/img/cogonauts-flidas-grindr.webp'
+        img:'/assets/img/cogonauts-flidas-grindr.webp'
     },
     {
         id:'2',
@@ -17,7 +17,7 @@ const products = [
         category:'Growing Media', 
         stock:'20', 
         initial:1,
-        img:'../public/assests/img/eden-substrate.jpg'
+        img:'/assets/img/eden-substrate.jpg'
     },
     {
         id:'3',
@@ -27,9 +27,16 @@ const products = [
         category:'Lighting', 
         stock:'10', 
         initial:1,
-        img:'../public/assets/img/sodium-lamp-400w.jpg'
+        img:'/assets/img/sodium-lamp-400w.jpg'
     }
 ]
 
+export const getProducts = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products)
+        }, 2000)
+    })
+};
 
 

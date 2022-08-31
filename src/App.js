@@ -12,7 +12,7 @@ function App() {
     stock: 10,
     initial: 1,
     onAdd: (count) => {
-      if(count > 0) setCartCount(current => current + count);
+      if(count > 0) setCartCount(cartCount + count);
     }
   };
 
