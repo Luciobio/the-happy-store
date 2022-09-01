@@ -1,14 +1,15 @@
-import ItemCount from "../ItemCount/ItemCount";
+import './Item.css'
 
-const Item = ({prod, countProps}) => {
-    console.log(prod.img)
+const Item = ({prod}) => {
+
+    const {name, price, img} = prod
+
     return (
-        <div className = 'ItemCount'>
-            <img  alt={prod.noun} src={prod.img}/>
-            <h4>{prod.name}</h4>
-            {/* <p className="cardDesc">{prod.description}</p> */}
-            <h3>$ {prod.price}</h3>
-            <ItemCount stock={countProps.stock} initial={countProps.initial} onAdd={countProps.onAdd}/>
+        <div className = 'Item'>
+            <img  alt={name} src={img}/>
+            <h4>{name}</h4>
+            <h3>$ {price}</h3>
+            <button>See More</button>
         </div>
     )
 };

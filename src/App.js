@@ -2,11 +2,10 @@ import './App.css';
 import {useState} from 'react';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
-
-  let greeting = {message: 'Welcome to Our Store'};
 
   let countProps = {
     stock: 10,
@@ -19,7 +18,8 @@ function App() {
   return (
     <div className="App">
       <NavBar cartCount = {cartCount}/>
-      <ItemListContainer countProps={countProps} greeting={greeting} />
+      <ItemListContainer />
+      <ItemDetailContainer countProps={countProps}/>
     </div>
   );
 };
