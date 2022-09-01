@@ -1,0 +1,13 @@
+.ItemDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+
+.infoBox {
+    max-width: 300px;
+}
+
+.itemImg {
+    height: 300px;
+}
