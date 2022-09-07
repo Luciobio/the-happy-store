@@ -4,9 +4,9 @@ import {getProduct} from "../../asyncMock";
 import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = ({countProps}) => {
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState({});
     const [loading, setLoading] = useState(true);
-    const { product } = useParams()
+    const {product} = useParams();
 
     useEffect(()=>{
         getProduct(product)

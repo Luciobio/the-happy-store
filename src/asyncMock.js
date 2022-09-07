@@ -34,23 +34,23 @@ const products = [
 export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products)
+            resolve(products);
         }, 2000)
     })
 };
 
 export const getProduct = (id) => {
-    return new Promise (resolve => {
+    return new Promise ((resolve) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === id))
+            resolve(products.find(prod => prod.id === parseInt(id)));
         }, 1000)
     })
 };
 
 export const getCategory = (category) => {
-    return new Promise (resolve => {
+    return new Promise ((resolve) => {
         setTimeout(() => {
-            resolve(products.filter(prod => prod.category === category))
+            resolve(products.filter(prod => prod.category === category));
         }, 1000)
     })
 };
