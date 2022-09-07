@@ -14,7 +14,7 @@ const products = [
         name:'Substrate Eden - 25L', 
         price:'1075', 
         description:'• EDEN - Queens paradise es un sustrato de uso profesional, que ofrece óptimas condiciones de siembra y/o trasplante, por su excelente aireación, retención de agua, reacción (pH) y Ce.', 
-        category:'Growing Media', 
+        category:'Growing', 
         stock:'20', 
         initial:1,
         img:'/assets/img/eden-substrate.jpg'
@@ -36,6 +36,22 @@ export const getProducts = () => {
         setTimeout(() => {
             resolve(products)
         }, 2000)
+    })
+};
+
+export const getProduct = (id) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === id))
+        }, 1000)
+    })
+};
+
+export const getCategory = (category) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(products.filter(prod => prod.category === category))
+        }, 1000)
     })
 };
 

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -17,9 +18,14 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar cartCount = {cartCount}/>
-      <ItemListContainer />
-      <ItemDetailContainer countProps={countProps}/>
+      <Router>
+        <NavBar cartCount = {cartCount}/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/category/:category' element={<ItemListContainer />}/>
+          <Route path='/detail/:product' element={<ItemDetailContainer countProps={countProps}/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 };

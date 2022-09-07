@@ -1,17 +1,21 @@
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget'
 import Logo from '../../Imgs/THS_logo.png'
+import { Link } from 'react-router-dom';
 
 const NavBar = ({cartCount}) => {
     return(
         <div className= 'NavBar'>
-            <img className= 'logo' src={Logo} alt='/'/>
+            <Link to='/'><img className= 'logo' src={Logo} alt='/'/></Link>
+            <div className='linksCont'>
+                <Link to='/category/Accesories'>ACCESORIES</Link>
+                <Link to='/category/Growing'>GROWING</Link>
+                <Link to='/category/Lighting'>LIGHTING</Link>
+            </div>
             <div className= 'linksCont'>
-                <a className='navItem' href='/'>HOME</a>
-                <a className='navItem' href='/'>PRODUCTS</a>
-                <a className='navItem' href='/'>CONTACT</a>
+                <Link to='/contact'>CONTACT</Link>
                 <div className='cartCont'>
-                    <a className='navItem' href='/'>CART</a>
+                    <Link to='/cart'>CART</Link>
                     <CartWidget cartCount={cartCount}/>
                 </div>                
             </div>
