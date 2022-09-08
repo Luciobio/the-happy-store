@@ -10,7 +10,7 @@ const Item = ({prod}) => {
             <img  alt={name} src={img}/>
             <h4>{name}</h4>
             <h3>$ {price}</h3>
-            <button><Link to={`/detail/${id}`} className='whiteLink'>SEE MORE</Link></button>
+            <button><Link className='whiteLink' to={`/detail/${id}`}>SEE MORE</Link></button>
         </div>
     )
 };

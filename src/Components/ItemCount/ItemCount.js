@@ -1,7 +1,7 @@
 import './ItemCount.css';
 import {useState} from 'react';
 
-const ItemCount = ({countProps}) => {
+const ItemCount = ({countProps, onAdd2}) => {
 
     const {stock, initial, onAdd} = countProps;
 
@@ -18,6 +18,7 @@ const ItemCount = ({countProps}) => {
 
     const handeAdd = () => {
         onAdd(count);
+        onAdd2(count);
         setItemStock(current => current - count);
         setCount(0);
     }
@@ -29,7 +30,7 @@ const ItemCount = ({countProps}) => {
                 <div className= 'count'>{count}</div>
                 <button onClick={()=> increment(itemStock)}> + </button>
             </div>
-            <button className = 'addBttn' onClick={handeAdd}> Add to Cart </button>
+            <button className = 'addBtn' onClick={handeAdd}><div className='add'>ADD TO CART</div></button>
         </div>
     );
 };

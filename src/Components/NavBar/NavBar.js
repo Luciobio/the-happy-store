@@ -8,7 +8,7 @@ const NavBar = ({cartCount}) => {
         <div className= 'NavBar'>
             <Link to='/'><img className= 'logo' src={Logo} alt='/'/></Link>
             <div className='linksCont'>
-                <Link to='/category/Accesories'>ACCESORIES</Link>
+                <Link className='' to='/category/Accesories'>ACCESORIES</Link>
                 <Link to='/category/Growing'>GROWING</Link>
                 <Link to='/category/Lighting'>LIGHTING</Link>
             </div>

@@ -1,9 +1,11 @@
-import ItemDetail from "../ItemDetail/ItemDetail";
+import ItemDetail from '../ItemDetail/ItemDetail';
+import Loading from '../Loading/Loading';
 import { useEffect, useState } from "react";
 import {getProduct} from "../../asyncMock";
 import { useParams } from 'react-router-dom'
+import './ItemDetailContainer.css'
 
-const ItemDetailContainer = ({countProps}) => {
+const ItemDetailContainer = ({onAdd2}) => {
     const [item, setItem] = useState({});
     const [loading, setLoading] = useState(true);
     const {product} = useParams();
@@ -12,8 +14,6 @@ const ItemDetailContainer = ({countProps}) => {
         getProduct(product)
         .then(res => {
             setItem(res);
-            console.log(res);
-            console.log(item);
         })
         .catch(err => {
             console.log(err)
@@ -21,12 +21,14 @@ const ItemDetailContainer = ({countProps}) => {
         .finally(() => setLoading(false)); 
     },[product]);
 
-    const isLoading = loading? <h2>Loading...</h2> : (
-        <ItemDetail countProps={countProps} item={item}/>
+    const isLoading = loading? <Loading/> : (
+        <ItemDetail item={item} onAdd2={onAdd2}/>
     );
 
     return (
-        isLoading
+        <div className='ItemDetailContainer'>
+            {isLoading}
+        </div>
     )
 }
 

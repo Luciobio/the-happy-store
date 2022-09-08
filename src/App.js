@@ -1,29 +1,25 @@
 import './App.css';
-import {useState} from 'react';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
+  const [cartNum, setCartNum] = useState(0);
 
-  let countProps = {
-    stock: 10,
-    initial: 1,
-    onAdd: (count) => {
-      if(count > 0) setCartCount(cartCount + count);
-    }
-  };
+  const onAdd2 = (count) => {
+    if(count > 0) setCartNum(cartNum + count);
+  } 
 
   return (
     <div className="App">
       <Router>
-        <NavBar cartCount = {cartCount}/>
+        <NavBar cartCount = {cartNum}/>
         <Routes>
           <Route path='/' element={<ItemListContainer />}/>
           <Route path='/category/:category' element={<ItemListContainer />}/>
-          <Route path='/detail/:product' element={<ItemDetailContainer countProps={countProps}/>}/>
+          <Route path='/detail/:product' element={<ItemDetailContainer onAdd2={onAdd2}/>}/>
         </Routes>
       </Router>
     </div>

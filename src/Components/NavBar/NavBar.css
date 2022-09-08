@@ -26,16 +26,13 @@
     justify-content: space-around;
 }
 
-.navItem {
-    margin-bottom: 2vh;
-}
-
-a {
+.NavBar a {
     text-decoration: none;
     color: #04A118;
+    margin-bottom: 2vh
 }
 
-a:hover {
+.NavBar a:hover {
     color:#02600f;
 }
 
