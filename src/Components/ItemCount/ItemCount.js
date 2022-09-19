@@ -1,7 +1,7 @@
 import './ItemCount.css';
 import {useState} from 'react';
 
-const ItemCount = ({countProps, onAdd2}) => {
+const ItemCount = ({countProps}) => {
 
     const {stock, initial, onAdd} = countProps;
 
@@ -18,7 +18,6 @@ const ItemCount = ({countProps, onAdd2}) => {
 
     const handeAdd = () => {
         onAdd(count);
-        onAdd2(count);
         setItemStock(current => current - count);
         setCount(0);
     }
