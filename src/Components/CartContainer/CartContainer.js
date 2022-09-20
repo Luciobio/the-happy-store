@@ -1,15 +1,16 @@
 import { useContext } from "react"
-import { CartContext, CartProvider } from "../../Context/CartContext"
+import { CartContext } from "../../Context/CartContext"
 import CartItem from "../CartItem/CartItem";
 
 const CartContainter = () => {
-    const {cart} = useContext(CartContext);
-    
-    return(
+    const { cart, clearCart } = useContext(CartContext);
+
+    return (
         <div>
             {
-            cart.map(item => <CartItem key={item.id} item={item}/>)
-            };
+                cart.map(item => <CartItem key={item.id} item={item} />)
+            }
+            <button onClick={clearCart}>Clear Cart</button>
         </div>
     )
 };

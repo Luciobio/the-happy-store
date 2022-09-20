@@ -15,9 +15,9 @@ function App() {
           <NavBar cartCount={0} />
           <Routes>
             <Route path='/' element={<ItemListContainer />} />
-            <Route path='/category/:category' element={<ItemListContainer/>} />
-            <Route path='/detail/:product' element={<ItemDetailContainer/>} />
-            <Route path='cart' element={<CartContainter/>}/>
+            <Route path='/category/:category' element={<ItemListContainer />} />
+            <Route path='/detail/:product' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<CartContainter />} />
           </Routes>
         </Router>
       </CartProvider>
