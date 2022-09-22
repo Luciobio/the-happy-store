@@ -1,12 +1,15 @@
 import ItemCount from "../ItemCount/ItemCount";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import './ItemDetail.css';
 import { CartContext } from "../../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
     const { id, name, price, description, img } = item;
-    const { addItem, cart, getProductQuantity } = useContext(CartContext);
+
+    const [count, setCount] = useState(0);
+
+    const { addItem, getProductQuantity } = useContext(CartContext);
 
     const quantityAdded = getProductQuantity(id)
 
@@ -16,6 +19,7 @@ const ItemDetail = ({ item }) => {
         onAdd: (count) => {
             if (count > 0) {
                 addItem(item, count);
+                setCount(count);
             }
         }
     };
@@ -28,7 +32,7 @@ const ItemDetail = ({ item }) => {
                 <p>{description}</p>
                 <h3>$ {price}</h3>
                 {
-                    cart.length === 0 ? (
+                    count === 0 ? (
 
                         <ItemCount countProps={countProps} />
                     ) : (
