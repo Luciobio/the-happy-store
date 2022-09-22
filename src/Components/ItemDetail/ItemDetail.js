@@ -5,12 +5,14 @@ import './ItemDetail.css';
 import { CartContext } from "../../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
-    const { name, price, description, img } = item;
-    const { addItem, cart } = useContext(CartContext);
+    const { id, name, price, description, img } = item;
+    const { addItem, cart, getProductQuantity } = useContext(CartContext);
+
+    const quantityAdded = getProductQuantity(id)
 
     const countProps = {
         stock: item.stock,
-        initial: item.initial,
+        initial: quantityAdded ? quantityAdded : item.initial,
         onAdd: (count) => {
             if (count > 0) {
                 addItem(item, count);

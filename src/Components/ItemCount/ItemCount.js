@@ -13,7 +13,7 @@ const ItemCount = ({countProps}) => {
     };
 
     const decrement = () => {
-        if(count > initial) setCount(current => current - 1);
+        if(count > 0 ) setCount(current => current - 1);
     };
 
     const handeAdd = () => {

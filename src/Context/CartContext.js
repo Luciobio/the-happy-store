@@ -10,9 +10,10 @@ export const CartProvider = ({ children }) => {
         if (isInCart(item.id)) {
             const itemIndex = cart.findIndex(e => e.id === item.id);
             currentCart[itemIndex].quantity += quantity;
+            
             setCart(currentCart);
         } else {
-            const newItem = { ...item, quantity: quantity };
+            const newItem = { ...item, quantity: quantity , totalPrice: quantity*item.price};
             const newList = [...cart, newItem];
             setCart(newList);
         }
@@ -28,8 +29,13 @@ export const CartProvider = ({ children }) => {
 
     const isInCart = itemId => cart.some(e => e.id === itemId);
 
+    const getProductQuantity = (id) => {
+        const product = cart.find(prod => prod.id === id)
+        return product?.quantity
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, isInCart }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, isInCart, getProductQuantity }}>
             {children}
         </CartContext.Provider>
     );
