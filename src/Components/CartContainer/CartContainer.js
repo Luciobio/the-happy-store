@@ -4,13 +4,7 @@ import CartItem from "../CartItem/CartItem";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
 
 const CartContainter = () => {
-    const { cart, clearCart } = useContext(CartContext);
-
-    const total = () => {
-        let sum = 0;
-        cart.forEach(e => sum += e.totalPrice);
-        return sum;
-    }
+    const { cart, clearCart, cartTotal } = useContext(CartContext);
 
     return (
         cart.length > 0 ?
@@ -22,7 +16,7 @@ const CartContainter = () => {
                     <button onClick={clearCart}>Clear Cart</button>
                     <br />
                     <div>
-                        Cart Total: {total()}
+                        Cart Total: {cartTotal()}
                     </div>
                 </div>
                 <br />
