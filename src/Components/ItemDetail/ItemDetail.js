@@ -36,10 +36,7 @@ const ItemDetail = ({ item }) => {
 
                         <ItemCount countProps={countProps} />
                     ) : (
-                        <div>
-                            <ItemCount countProps={countProps} />
-                            <button><Link className='whiteLink' to='/cart'>CHECK OUT</Link></button>
-                        </div>
+                        <button><Link className='whiteLink' to='/cart'>CHECK OUT</Link></button>
                     )
                 }
             </div>

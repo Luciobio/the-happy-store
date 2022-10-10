@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
         const currentCart = [...cart];
         if (isInCart(item.id)) {
             const itemIndex = cart.findIndex(e => e.id === item.id);
-            currentCart[itemIndex].quantity += quantity;
+            currentCart[itemIndex].quantity = quantity;
             
             setCart(currentCart);
         } else {
