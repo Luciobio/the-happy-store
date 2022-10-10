@@ -69,7 +69,7 @@ const CheckOutForm = () => {
                 </label>
                 <label>
                     Phone:
-                    <input type='tel' name='phone' />
+                    <input type='number' name='phone' />
                 </label>
                 <label>
                     Email:
