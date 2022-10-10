@@ -64,18 +64,18 @@ const CheckOutForm = () => {
         <div>
             <form onSubmit={createOrder}>
                 <label>
-                    Name:
+                    <h3>Name:</h3>
                     <input type='text' name='name' />
                 </label>
                 <label>
-                    Phone:
+                    <h3>Phone:</h3>
                     <input type='tel' name='phone' />
                 </label>
                 <label>
-                    Email:
+                    <h3>Email:</h3>
                     <input type='email' name='email' />
                 </label>
-                <button type='submit'>Confirm</button>
+                <button type='submit'>CONFIRM</button>
             </form>
         </div>
     )

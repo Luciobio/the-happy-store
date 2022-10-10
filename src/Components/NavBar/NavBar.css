@@ -23,7 +23,7 @@
 .cartCont {
     width: 18%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 
 .NavBar a {

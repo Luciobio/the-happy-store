@@ -1,3 +1,29 @@
 .App {
   text-align: center;
 }
+
+button{
+  font-family: 'Barlow Condensed', sans-serif;
+  color: white;
+  background-color: #04A118;
+  border: solid 1px #04A118;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: auto;
+  }
+
+button:hover {
+  color: #04A118; 
+  background-color: white;  
+}
+
+a {
+  font-family: 'Barlow Condensed', sans-serif;
+}
