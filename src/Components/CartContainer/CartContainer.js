@@ -1,9 +1,9 @@
-import './CartContainer.css';
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import CartItem from "../CartItem/CartItem";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
+import './CartContainer.css';
 
 const CartContainter = () => {
     const { cart, clearCart, cartTotal } = useContext(CartContext);
@@ -15,9 +15,12 @@ const CartContainter = () => {
                     {
                         cart.map(item => <CartItem key={item.id} item={item} />)
                     }
-                    <h2>CART TOTAL: {cartTotal()}</h2>
+                    <h2>CART TOTAL: ${cartTotal()}</h2>
                     <button onClick={clearCart}>CLEAR CART</button>
                 </div>
+                <br />
+                <span className='divition'></span>
+                <br />
                 <CheckOutForm />
             </div>
             :

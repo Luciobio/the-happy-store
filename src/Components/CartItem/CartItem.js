@@ -13,7 +13,7 @@ const CartItem = ({ item }) => {
                 <h2>{name}</h2>
                 <div>
                     <h3>Qty: {quantity}</h3>
-                    <h3>Total: {totalPrice}</h3>
+                    <h3>Total: ${totalPrice}</h3>
                 </div>
             </div>
             <button onClick={() => removeItem(item.id)}>REMOVE ITEM</button>

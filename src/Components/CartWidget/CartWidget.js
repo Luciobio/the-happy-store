@@ -1,18 +1,12 @@
-import './CartWidget.css';
-import { ReactComponent as CartIcon } from '../../Imgs/Icons/cart_icon.svg';
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
+import { ReactComponent as CartIcon } from '../../Imgs/Icons/cart_icon.svg';
+import './CartWidget.css';
 
 const CartWidget = () => {
     const { cart } = useContext(CartContext);
 
-    const cartCount = () => {
-        let acc = 0;
-        cart.forEach((item) => {
-            acc += item.quantity;
-        });
-        return acc;
-    };
+    const cartCount = () => cart.reduce((acc, e) => acc + e.quantity, 0);
 
     return (
         cart.length === 0 ?

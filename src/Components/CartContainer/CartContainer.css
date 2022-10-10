@@ -4,3 +4,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+.divition {
+    width: 80vw;
+    height: 1px;
+    border-bottom: 1px solid #04A118;
+    margin: 2% 0 2% 0;
+}

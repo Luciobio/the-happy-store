@@ -7,7 +7,7 @@ const ItemList = ({ items, loading }) => {
 
     const isLoading = loading ?
         (
-            <Loading/>
+            <Loading />
         ) : (
             <div className="ItemList">
                 {showItems}

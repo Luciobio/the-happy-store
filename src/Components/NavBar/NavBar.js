@@ -1,15 +1,16 @@
-import './NavBar.css';
 import { useEffect, useState } from 'react';
-import CartWidget from '../CartWidget/CartWidget';
-import Logo from '../../Imgs/THS_logo.png';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../Services/Firebase/index';
 import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
+import Logo from '../../Imgs/THS_logo.png';
+import './NavBar.css';
 
-const NavBar = ({cartCount}) => {
+const NavBar = ({ cartCount }) => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
+        //Gets the dinamically generated categories from Firebase
         const cats = collection(db, 'categories');
         getDocs(cats)
             .then(res => {
@@ -19,20 +20,20 @@ const NavBar = ({cartCount}) => {
                 setCategories(cat)
             })
     }, []);
-    
-    const NavLinks = categories.map(e => <Link key={e.id} to={'/category/'+e.id}>{e.category.toUpperCase()}</Link>)
 
-    return(
-        <div className= 'NavBar'>
-            <Link to='/'><img className= 'logo' src={Logo} alt='/'/></Link>
+    const NavLinks = categories.map(e => <Link key={e.id} to={'/category/' + e.id}>{e.category.toUpperCase()}</Link>)
+
+    return (
+        <div className='NavBar'>
+            <Link to='/'><img className='logo' src={Logo} alt='/' /></Link>
             <div className='linksCont'>
-            {NavLinks}
+                {NavLinks}
             </div>
-            <div className= 'linksCont'>
+            <div className='linksCont'>
                 <div className='cartCont'>
                     <Link to='/cart'>CART</Link>
-                    <CartWidget cartCount={cartCount}/>
-                </div>                
+                    <CartWidget cartCount={cartCount} />
+                </div>
             </div>
         </div>
     );

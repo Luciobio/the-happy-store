@@ -1,8 +1,11 @@
-import ItemCount from "../ItemCount/ItemCount";
 import { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
-import './ItemDetail.css';
 import { CartContext } from "../../Context/CartContext";
+import { ToastContainer, toast } from 'react-toastify';
+import ItemCount from "../ItemCount/ItemCount";
+import 'react-toastify/dist/ReactToastify.css';
+import './ItemDetail.css';
+
 
 const ItemDetail = ({ item }) => {
     const { id, name, price, description, img } = item;
@@ -11,7 +14,12 @@ const ItemDetail = ({ item }) => {
 
     const { addItem, getProductQuantity } = useContext(CartContext);
 
-    const quantityAdded = getProductQuantity(id)
+    const quantityAdded = getProductQuantity(id);
+
+    const notify = () => toast.success(`🌿 ${name} added to Cart`, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        className: 'foo-bar'
+    });
 
     const countProps = {
         stock: item.stock,
@@ -20,6 +28,7 @@ const ItemDetail = ({ item }) => {
             if (count > 0) {
                 addItem(item, count);
                 setCount(count);
+                notify();
             }
         }
     };
@@ -40,6 +49,19 @@ const ItemDetail = ({ item }) => {
                     )
                 }
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="light"
+                style={{ fontfamily: 'Barlow Condensed' }}
+            />
         </div>
     )
 }
