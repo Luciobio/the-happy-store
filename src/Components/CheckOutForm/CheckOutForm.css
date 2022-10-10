@@ -1,0 +1,13 @@
+.CheckOutForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CheckOutForm h3 {
+    align-self: flex-start;
+}
+
+.submitBtn {
+    align-self: center;
+}

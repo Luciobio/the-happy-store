@@ -55,29 +55,32 @@ const CheckOutForm = () => {
                     addDoc(collection(db, "orders"), order)
                         .then(response => console.log(`this is your order ${response.id}`));
                     batch.commit();
+                    e.target.name.value= '';
+                    e.target.phone.value= '';
+                    e.target.email.value= '';
                 }
                 else outOfStock.map(p => console.log(`sorry, the product ${p.name} is out of stock`))
             });
+        
     };
 
     return (
-        <div>
-            <form onSubmit={createOrder}>
-                <label>
-                    <h3>Name:</h3>
-                    <input type='text' name='name' />
-                </label>
-                <label>
-                    <h3>Phone:</h3>
-                    <input type='tel' name='phone' />
-                </label>
-                <label>
-                    <h3>Email:</h3>
-                    <input type='email' name='email' />
-                </label>
-                <button type='submit'>CONFIRM</button>
-            </form>
-        </div>
+        <form className='CheckOutForm' onSubmit={createOrder}>
+            <label>
+                <h3>Name:</h3>
+                <input type='text' name='name' />
+            </label>
+            <label>
+                <h3>Phone:</h3>
+                <input type='tel' name='phone' />
+            </label>
+            <label>
+                <h3>Email:</h3>
+                <input type='email' name='email' />
+            </label>
+            <div></div>
+            <button className='submitBtn' type='submit'>CONFIRM</button>
+        </form>
     )
 }
 

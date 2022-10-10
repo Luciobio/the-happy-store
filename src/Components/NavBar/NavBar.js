@@ -20,7 +20,7 @@ const NavBar = ({cartCount}) => {
             })
     }, []);
     
-    const NavLinks = categories.map(e => <Link to={'/category/'+e.id}>{e.category.toUpperCase()}</Link>)
+    const NavLinks = categories.map(e => <Link key={e.id} to={'/category/'+e.id}>{e.category.toUpperCase()}</Link>)
 
     return(
         <div className= 'NavBar'>
